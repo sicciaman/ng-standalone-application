@@ -7,8 +7,8 @@ import {Component, OnInit} from '@angular/core';
         <div class="flex justify-between px-12">
 
             <button class="flex flex-col justify-center items-center gap-3 text-white text-sm">
-                <div class="w-16 h-16 rounded-full bg-green-500 shadow">
-                    <img src="assets/phone.png" alt="Accept call" class="p-4">
+                <div class="w-16 h-16 rounded-full bg-green-500 shadow animate-ring">
+                    <img src="assets/phone.png" alt="Accept call" class="p-4 animate-shake">
                 </div>
                 <label class="text-white">Accept</label>
             </button>
