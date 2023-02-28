@@ -57,6 +57,20 @@ module.exports = {
                             '0 0 0 10px rgba(255, 255, 255, 0.1)'
                     }
                 },
+                'ringing-slow': {
+                    '0%': {
+                        'box-shadow': '0 0 0 5px rgba(255, 255, 255, 0.2), ' +
+                            '0 0 0 10px rgba(255, 255, 255, 0.1)'
+                    },
+                    '50%': {
+                        'box-shadow': '0 0 0 10px rgba(255, 255, 255, 0.2),' +
+                            '0 0 0 20px rgba(255, 255, 255, 0.1)'
+                    },
+                    '100%': {
+                        'box-shadow': '0 0 0 5px rgba(255, 255, 255, 0.2), ' +
+                            '0 0 0 10px rgba(255, 255, 255, 0.1)'
+                    }
+                },
                 'pulse-slow': {
                     '0%': {
                         transform: 'scale(1.0)'
@@ -67,14 +81,33 @@ module.exports = {
                     '100%': {
                         transform: 'scale(1.0)',
                     }
+                },
+                'pulse-fast': {
+                    '0%': {
+                        transform: 'scale(1.0)'
+                    },
+                    '33%': {
+                        transform: 'scale(1.1)'
+                    },
+                    '50%': {
+                        transform: 'scale(1.0)'
+                    },
+                    '66%': {
+                        transform: 'scale(1.1)'
+                    },
+                    '100%': {
+                        transform: 'scale(1.0)'
+                    }
                 }
             }
         },
         animation: {
             planet: "breathing-planet 2s ease-in-out infinite",
             ring: "ringing 2s ease-in-out infinite",
+            ringSlow: "ringing-slow 2s ease-in-out infinite",
             shake: "shaking 1s infinite",
             pulseSlow: "pulse-slow 2s ease-in-out infinite",
+            pulseFast: "pulse-fast 2s ease-in-out infinite",
         },
     },
     plugins: [],
