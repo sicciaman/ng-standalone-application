@@ -24,7 +24,7 @@ import {CommonModule} from '@angular/common';
                     <app-call-actions *ngIf="(cs.status | async) === 'ACCEPTED'"/>
                 </div>
             </div>
-            <div class="absolute left-16 bottom-16 transition-all duration-[2000ms] rounded-full w-8 h-8 bg-purple-600 -z-10"
+            <div class="absolute left-16 bottom-16 transition-all duration-1000 rounded-full w-8 h-8 max-w-full max-h-screen bg-gradient-to-t from-green-200 via-green-300 to-blue-500 -z-10 opacity-0"
                  [ngClass]="(cs.status | async) === 'ACCEPTED' ? 'after' : null">
             </div>
         </div>
@@ -34,15 +34,11 @@ import {CommonModule} from '@angular/common';
         height: 100%;
         width: 100%;
       };
-      
+
       .after {
-        width: 200vw;
-        height: 200vw;
-        border-radius: 0%;
-        inset: 0;
-        background-color: #0000ff; /* colore di arrivo */
-        z-index: -1;
-      }
+        transform: scale(100);
+        opacity: 100%;
+      };
     `]
 })
 export default class CallComponent {
