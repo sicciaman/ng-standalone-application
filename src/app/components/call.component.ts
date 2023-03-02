@@ -12,15 +12,20 @@ import {CommonModule} from '@angular/common';
     imports: [CommonModule, HeaderComponent, CallerComponent, PreCallActionsComponent, CallActionsComponent],
     providers: [CallService],
     template: `
-        <div class="flex flex-col justify-between items-center py-16 h-full w-full" xmlns="http://www.w3.org/1999/html">
-            <div class="flex flex-col gap-10 w-full">
-                <app-header/>
-                <app-caller/>
-            </div>
+        <div class="relative h-full overflow-hidden">
+            <div class="flex flex-col justify-between items-center py-16 h-full w-full">
+                <div class="flex flex-col gap-10 w-full">
+                    <app-header/>
+                    <app-caller/>
+                </div>
 
-            <div class="w-full">
-                <app-pre-call-actions *ngIf="(cs.status | async) === 'INCOMING'"/>
-                <app-call-actions *ngIf="(cs.status | async) === 'ACCEPTED'"/>
+                <div class="w-full">
+                    <app-pre-call-actions *ngIf="(cs.status | async) === 'INCOMING'"/>
+                    <app-call-actions *ngIf="(cs.status | async) === 'ACCEPTED'"/>
+                </div>
+            </div>
+            <div class="absolute left-16 bottom-16 transition-all duration-[2000ms] rounded-full w-8 h-8 bg-purple-600 -z-10"
+                 [ngClass]="(cs.status | async) === 'ACCEPTED' ? 'after' : null">
             </div>
         </div>
     `,
@@ -28,6 +33,15 @@ import {CommonModule} from '@angular/common';
       :host {
         height: 100%;
         width: 100%;
+      };
+      
+      .after {
+        width: 200vw;
+        height: 200vw;
+        border-radius: 0%;
+        inset: 0;
+        background-color: #0000ff; /* colore di arrivo */
+        z-index: -1;
       }
     `]
 })
