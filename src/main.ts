@@ -2,6 +2,7 @@ import {bootstrapApplication} from '@angular/platform-browser';
 import {provideRouter, Routes} from '@angular/router';
 import AppComponent from './app/app.component';
 import {LayoutComponent} from './app/layout.component';
+import {provideAnimations} from '@angular/platform-browser/animations';
 
 const routes: Routes = [
     {path: '', redirectTo: 'call', pathMatch: 'full'},
@@ -15,5 +16,5 @@ const routes: Routes = [
 ];
 
 bootstrapApplication(AppComponent, {
-    providers: [provideRouter(routes)]
+    providers: [provideRouter(routes), provideAnimations()]
 }).then(() => console.debug('Application started...'));

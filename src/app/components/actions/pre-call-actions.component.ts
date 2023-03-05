@@ -4,6 +4,11 @@ import {CallService} from '../../services/call.service';
 @Component({
     standalone: true,
     selector: 'app-pre-call-actions',
+    styles: [`
+      :host {
+        width: 100%;
+      }
+    `],
     template: `
         <div class="flex justify-between px-12">
             <button class="flex flex-col justify-center items-center gap-3 text-white text-sm" (click)="acceptCall()">

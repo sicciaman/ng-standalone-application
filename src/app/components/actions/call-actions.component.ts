@@ -3,6 +3,11 @@ import {Component, OnInit} from '@angular/core';
 @Component({
     standalone: true,
     selector: 'app-call-actions',
+    styles: [`
+      :host {
+        width: 100%;
+      }
+    `],
     template: `
         <div class="flex justify-between px-6">
 
